@@ -35,7 +35,7 @@ public class SentenceCreater {
 	 * @param adverbCount
 	 * @return
 	 */
-	public String SentenceCreater(String aVerb, String bVerb, String aNoun, String bNoun, String aAdjective, String bAdjective, String aAdverb, String bAdverb, int verbCount, int nounCount, int adjectiveCount, int adverbCount) {
+	public sentenceCreater(String aVerb, String bVerb, String aNoun, String bNoun, String aAdjective, String bAdjective, String aAdverb, String bAdverb, int verbCount, int nounCount, int adjectiveCount, int adverbCount) {
 		verb1 = aVerb;
 		verb2 = bVerb;
 		noun1 = aNoun;
@@ -48,6 +48,128 @@ public class SentenceCreater {
 		numNoun = nounCount;
 		numAdjective = adjectiveCount;
 		numAdverb = adverbCount;
+		
+		
+	}
+	
+	public void sentenceOutput() {
+		if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 0) {
+			System.out.println("The " + noun1 +  " " + verb1 ".");
+			
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 1 && numAdverb == 0) {
+			System.out.println("The "+ adjective1 + " " + noun1 + " " + verb1 + ".");
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 2 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 1 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 1 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 2 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 1 && numAdjective == 2 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 0 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 1 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 2 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 0 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 0 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 1 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 1 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 2 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 1 && numAdjective == 2 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 0 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 1 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 2 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 0 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 0 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 1 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 1 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 2 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 1 && numNoun == 2 && numAdjective == 2 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 0 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 1 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 2 && numAdverb == 0) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 0 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 0 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 1 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 1 && numAdverb == 2) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 2 && numAdverb == 1) {
+			
+		}
+		else if (numVerb == 2 && numNoun == 2 && numAdjective == 2 && numAdverb == 2) {
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}
