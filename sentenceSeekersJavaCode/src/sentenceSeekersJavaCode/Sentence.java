@@ -20,10 +20,14 @@ public class Sentence {
 		 String bAdjective = "156l7nmflaoi2n6lFsasenytlfdnasd";
 		 String aAdverb = "156l7nmflaoi2n6lFsasenytlfdnasd";
 		 String bAdverb = "156l7nmflaoi2n6lFsasenytlfdnasd";
-		 int numVerb = tempScan.nextInt();
-		 int numNoun = tempScan.nextInt();
-		 int numAdjective = tempScan.nextInt();
-		 int numAdverb = tempScan.nextInt();
+		 int numVerb = 0;
+		 int numNoun = 0;
+		 int numAdjective = 0;
+		 int numAdverb = 0;
+		 numVerb = tempScan.nextInt();
+		 numNoun = tempScan.nextInt();
+		 numAdjective = tempScan.nextInt();
+		 numAdverb = tempScan.nextInt();
 		
 		 /**
 		  * Assigns variables based on how many variables there are.
@@ -76,7 +80,7 @@ public class Sentence {
 		}
 		
 		
-		
-		
+		SentenceCreater c = new SentenceCreater(aVerb, bVerb, aNoun, bNoun, aAdjective, bAdjective, aAdverb, bAdverb, numVerb, numNoun, numAdjective, numAdverb);
+		c.sentenceOutput();
 	}
 }

@@ -1,4 +1,6 @@
 package sentenceSeekersJavaCode;
+import java.util.*;
+
 
 
 public class SentenceCreater {
@@ -35,7 +37,7 @@ public class SentenceCreater {
 	 * @param adverbCount
 	 * @return
 	 */
-	public sentenceCreater(String aVerb, String bVerb, String aNoun, String bNoun, String aAdjective, String bAdjective, String aAdverb, String bAdverb, int verbCount, int nounCount, int adjectiveCount, int adverbCount) {
+	public SentenceCreater(String aVerb, String bVerb, String aNoun, String bNoun, String aAdjective, String bAdjective, String aAdverb, String bAdverb, int verbCount, int nounCount, int adjectiveCount, int adverbCount) {
 		verb1 = aVerb;
 		verb2 = bVerb;
 		noun1 = aNoun;
@@ -53,24 +55,25 @@ public class SentenceCreater {
 	}
 	
 	public void sentenceOutput() {
+		Random r = new Random();
 		if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 0) {
-			System.out.println("The " + noun1 +  " " + verb1 ".");
+			System.out.println("The " + noun1 +  " " + verb1 + ".");
 			
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 1 && numAdverb == 0) {
 			System.out.println("The "+ adjective1 + " " + noun1 + " " + verb1 + ".");
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 2 && numAdverb == 0) {
-			
+			System.out.println("The "+ adjective1 + " " + adjective2 + " " + noun1 + " " + verb1 + ".");
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 1) {
-			
+			System.out.println("The " + noun1 +  " " + " " + adverb1 + " " + verb1 + ".");
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 2) {
-			
+			System.out.println("The " + noun1 +  " " + " " + adverb1 + " "  + adverb2 + " " + verb1 + ".");
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 1 && numAdverb == 1) {
-			
+			System.out.println("The "+ adjective1 + " " + noun1 + " " + adverb1 + " " + verb1 + ".");
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 1 && numAdverb == 2) {
 			
@@ -162,7 +165,9 @@ public class SentenceCreater {
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 2 && numAdverb == 2) {
 			
 		}
-		
+		else {
+			System.out.println("Error: Problem with number of inputs");
+		}
 		
 		
 		
