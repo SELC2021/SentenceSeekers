@@ -11,7 +11,7 @@ public class Sentence {
 		/**
 		 * initiallizes variables
 		 */
-		 Scanner tempScan = new Scanner(System.in);
+		 Scanner tempScan = new Scanner(System.in); // need to integrate into website.
 		 String aVerb = "156l7nmflaoi2n6lFsasenytlfdnasd";
 		 String bVerb = "156l7nmflaoi2n6lFsasenytlfdnasd";
 		 String aNoun = "156l7nmflaoi2n6lFsasenytlfdnasd";
@@ -41,6 +41,7 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of verbs");
+			return;
 		}
 		if (numNoun == 1) {
 			aNoun = tempScan.next();
@@ -51,6 +52,7 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of nouns");
+			return;
 		}
 		if (numAdjective == 1) {
 			aAdjective = tempScan.next();
@@ -64,6 +66,7 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of adjectives");
+			return;
 		}
 		if (numAdverb == 1) {
 			aAdverb = tempScan.next();
