@@ -77,6 +77,7 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of adverbs");
+			return;
 		}
 		
 		

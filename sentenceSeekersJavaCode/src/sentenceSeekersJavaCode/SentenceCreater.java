@@ -76,94 +76,94 @@ public class SentenceCreater {
 			System.out.println("The "+ adjective1 + " " + noun1 + " " + adverb1 + " " + verb1 + ".");
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 1 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s had %s %s %s.\n", adjective1, noun1, adverb1, adverb2, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 2 && numAdverb == 1) {
-			
+			System.out.printf("The %s %s %s had %s %s.\n", adjective1, adjective2, noun1, adverb1, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 1 && numAdjective == 2 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s %s had %s %s %s.\n", adjective1, adjective2, noun1, adverb1, adverb2, verb1);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 0 && numAdverb == 0) {
-			
+			System.out.printf("The %s %s and %s.\n", noun1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 1 && numAdverb == 0) {
-			
+			System.out.printf("The %s %s %s and %s.\n", adjective1, noun1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 2 && numAdverb == 0) {
-			
+			System.out.printf("The %s and %s %s %s and %s.\n", adjective1, adjective2, noun1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 0 && numAdverb == 1) {
-			
+			System.out.printf("The %s %s %s and %s.\n", noun1, adverb1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 0 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s %s and %s %s.\n", noun1, adverb1, verb1, adverb2, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 1 && numAdverb == 1) {
-			
+			System.out.printf("The %s %s %s %s and %s.\n", adjective1, noun1, adverb1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 1 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s %s %s and %s %s.\n", adjective1, noun1, adverb1, verb1, adverb2, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 2 && numAdverb == 1) {
-			
+			System.out.printf("The %s and %s %s %s %s and %s.\n", adjective1, adjective2, noun1, adverb1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 1 && numAdjective == 2 && numAdverb == 2) {
-			
+			System.out.printf("The %s and %s %s %s %s and %s %s.\n", adjective1, adjective2, noun1, adverb1, verb1, adverb2, verb2);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 0 && numAdverb == 0) {
-			
+			System.out.printf("The %s and %s %s.\n", noun1, noun2, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 1 && numAdverb == 0) {
-			
+			System.out.printf("The %s %s and %s %s.\n", adjective1, noun1, noun2, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 2 && numAdverb == 0) {
-			
+			System.out.printf("The %s %s and %s %s %s.\n", adjective1, noun1, adjective2, noun2, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 0 && numAdverb == 1) {
-			
+			System.out.printf("The %s and %s %s %s.\n", noun1, noun2, adverb1, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 0 && numAdverb == 2) {
-			
+			System.out.printf("The %s and %s %s %s %s.\n", noun1, noun2, adverb1, adverb2, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 1 && numAdverb == 1) {
-			
+			System.out.printf("The %s %s and %s %s %s.\n", adjective1, noun1, noun2, adverb1, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 1 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s and %s %s %s %s.\n", adjective1, noun1, noun2, adverb1, adverb2, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 2 && numAdverb == 1) {
-			
+			System.out.printf("The %s %s and %s %s %s %s.\n", adjective1, noun1, adjective2, noun2, adverb1, verb1);
 		}
 		else if (numVerb == 1 && numNoun == 2 && numAdjective == 2 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s and %s %s %s %s %s.\n", adjective1, noun1, adjective2, noun2, adverb1, adverb2, verb1);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 0 && numAdverb == 0) {
-			
+			System.out.printf("The %s and %s %s and %s.\n", noun1, noun2, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 1 && numAdverb == 0) {
-			
+			System.out.printf("The %s %s and %s %s and %s.\n", adjective1, noun1, noun2, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 2 && numAdverb == 0) {
-			
+			System.out.printf("The %s %s and %s %s %s and %s.\n", adjective1, noun1, adjective2, noun2, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 0 && numAdverb == 1) {
-			
+			System.out.printf("The %s and %s %s %s and %s.\n", noun1, noun2, adverb1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 0 && numAdverb == 2) {
-			
+			System.out.printf("The %s and %s %s %s and %s %s.\n", noun1, noun2, adverb1, verb1, adverb2, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 1 && numAdverb == 1) {
-			
+			System.out.printf("The %s %s and %s %s %s and %s.\n", adjective1, noun1, noun2, adverb1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 1 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s and %s %s %s and %s %s.\n", adjective1, noun1, noun2, adverb1, verb1, adverb2, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 2 && numAdverb == 1) {
-			
+			System.out.printf("The %s %s and %s %s %s %s and %s.\n", adjective1, noun1, adjective2, noun2, adverb1, verb1, verb2);
 		}
 		else if (numVerb == 2 && numNoun == 2 && numAdjective == 2 && numAdverb == 2) {
-			
+			System.out.printf("The %s %s and %s %s %s %s and %s %s.\n", adjective1, noun1, adjective2, noun2, adverb1, verb1, adverb2, verb2);
 		}
 		else {
 			System.out.println("Error: Problem with number of inputs");
