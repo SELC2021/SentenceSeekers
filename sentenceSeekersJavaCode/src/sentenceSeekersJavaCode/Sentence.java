@@ -1,8 +1,15 @@
 package sentenceSeekersJavaCode;
 import java.util.*;
-
+import com.scraperapi.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileWriter;
+import com.scraperapi.*;
+import org.apache.*;
 public class Sentence {
-	static void main(String[] args){
+	public static void main(String[] args) throws IOException{
+		
+	      
 		
 		// ask for amount of nouns, verbs, adjectives, and adverbs they want to use
 		// have user assign all relevant variables
@@ -29,6 +36,16 @@ public class Sentence {
 		 numAdjective = tempScan.nextInt();
 		 numAdverb = tempScan.nextInt();
 		
+		 File myObj = new File("websiteinformation.txt");
+		 FileWriter myWriter = new FileWriter("websiteinformation.txt");
+		 String websitename = "http://merriam-webster.com/dictionary/" + tempScan.next();
+		 String tempstring;
+			ScraperApiClient client = new ScraperApiClient("f5e450d823882f2efdb356a6c352443a");
+			  tempstring = (client.get(websitename)
+			  .result()).toString();
+		 System.out.println(tempstring);
+		myWriter.close();
+		 
 		 /**
 		  * Assigns variables based on how many variables there are.
 		  */
