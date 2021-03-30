@@ -41,6 +41,7 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of verbs");
+			tempScan.close();
 			return;
 		}
 		if (numNoun == 1) {
@@ -52,6 +53,7 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of nouns");
+			tempScan.close();
 			return;
 		}
 		if (numAdjective == 1) {
@@ -66,6 +68,7 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of adjectives");
+			tempScan.close();
 			return;
 		}
 		if (numAdverb == 1) {
@@ -80,11 +83,13 @@ public class Sentence {
 		}
 		else {
 			System.out.println("Error: wrong amount of adverbs");
+			tempScan.close();
 			return;
 		}
 		
 		
 		SentenceCreater c = new SentenceCreater(aVerb, bVerb, aNoun, bNoun, aAdjective, bAdjective, aAdverb, bAdverb, numVerb, numNoun, numAdjective, numAdverb);
 		c.sentenceOutput();
+		tempScan.close();
 	}
 }
