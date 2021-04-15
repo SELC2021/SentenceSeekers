@@ -1,11 +1,19 @@
 package sentenceSeekersJavaCode;
 import java.util.*;
+
+import java.applet.*;
 import com.scraperapi.*;
+
+import kong.unirest.Unirest;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
 import com.scraperapi.*;
 import org.apache.*;
+
+import java.util.concurrent.TimeUnit;
+
 public class Sentence {
 	public static void main(String[] args) throws IOException{
 		
@@ -31,87 +39,120 @@ public class Sentence {
 		 int numNoun = 0;
 		 int numAdjective = 0;
 		 int numAdverb = 0;
-		 numVerb = tempScan.nextInt();
-		 numNoun = tempScan.nextInt();
-		 numAdjective = tempScan.nextInt();
-		 numAdverb = tempScan.nextInt();
-		
-		 File myObj = new File("websiteinformation.txt");
 		 
-		 FileWriter myWriter = new FileWriter("websiteinformation.txt");
-		 String websitename = "http://merriam-webster.com/dictionary/" + tempScan.next();
+		 
+		 String tempString2;
+		 tempString2 = tempScan.nextLine();
+		 Scanner tempScan2 = new Scanner(tempString2);
+		 tempScan2.useDelimiter(" ");
+		 
+		 String tempString3;
+		 String websitename;
 		 String tempstring;
-			ScraperApiClient client = new ScraperApiClient("f5e450d823882f2efdb356a6c352443a");
-			  tempstring = (client.get(websitename)
-			  .result()).toString();
-		 // test tempstring to see if it includes /noun /verb /adjective and/or /adverb
+		 
+		 
+		 System.out.println("Sleeping for 2 second");
+		 try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+		 
+		 
+		 while(tempScan2.hasNext()) {
+			 tempString3 = tempScan2.next();
+			 websitename = "http://merriam-webster.com/dictionary/" + tempString3;
+			 ScraperApiClient client = new ScraperApiClient("f5e450d823882f2efdb356a6c352443a");
+				  tempstring = (client.get(websitename)
+				  .result()).toString();
+			 // test tempstring to see if it includes /noun /verb /adjective and/or /adverb
+				  System.out.println("Checking");
+			 
+			 if(tempstring.contains("href=\"/dictionary/verb\">verb") && numVerb  < 2) {
+				 if(numVerb == 0) {
+					 aVerb = tempString3;
+				 }
+				 else if(numVerb == 1) {
+					 bVerb = tempString3;
+				 }
+				 ++numVerb;
+			 }
+			 else if(tempstring.contains("href=\"/dictionary/noun\">noun") && numNoun < 2) {
+				 if(numNoun == 0) {
+					 aNoun = tempString3;
+				 }
+				 else if(numNoun == 1) {
+					 bNoun = tempString3;
+				 }
+				 ++numNoun;
+			 }
+			 else if(tempstring.contains("href=\"/dictionary/adverb\">adverb") && numAdverb  < 2) {
+				 if(numVerb == 0) {
+					 aAdverb = tempString3;
+				 }
+				 else if(numVerb == 1) {
+					 bAdverb = tempString3;
+				 }
+				 ++numAdverb;
+			 }
+			 
+			 else if(tempstring.contains("href=\"/dictionary/adverb\">adverb") && numAdjective  < 2) {
+				 if(numAdjective == 0) {
+					 aAdjective = tempString3;
+				 }
+				 else if(numAdjective == 1) {
+					 bAdjective = tempString3;
+				 }
+				 ++numAdjective;
+			 }
+			 else {
+				 System.out.println("Error");
+				 tempScan.close();
+				 tempScan2.close();
+				 return;
+			 }
+			 System.out.println("Sleeping for 10 second");
+			 try {
+				TimeUnit.SECONDS.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 Unirest.config().reset();
+		 }
+		 
+		 
+		 
 		 // assign tempstring to be at random something it is, or if there is already 2 of some word, make different word.
-		 myWriter.close();
-		 myObj.delete();
-		 myObj.createNewFile();
+		 
 		 
 		 
 		 /**
 		  * Assigns variables based on how many variables there are.
 		  */
-		if (numVerb == 1) {
-			aVerb = tempScan.next();
-		}
-		else if (numVerb == 2) {
-			aVerb = tempScan.next();
-			bVerb = tempScan.next();
-		}
-		else {
+		
+		if(numVerb == 0) {
 			System.out.println("Error: wrong amount of verbs");
 			tempScan.close();
+			tempScan2.close();
 			return;
 		}
-		if (numNoun == 1) {
-			aNoun = tempScan.next();
-		}
-		else if (numNoun == 2) {
-			aNoun = tempScan.next();
-			bNoun = tempScan.next();
-		}
-		else {
+		
+		if(numNoun == 0) {
 			System.out.println("Error: wrong amount of nouns");
 			tempScan.close();
+			tempScan2.close();
 			return;
 		}
-		if (numAdjective == 1) {
-			aAdjective = tempScan.next();
-		}
-		else if (numAdjective == 0) {
-			// do nothing
-		}
-		else if (numAdjective == 2) {
-			aAdjective = tempScan.next();
-			bAdjective = tempScan.next();
-		}
-		else {
-			System.out.println("Error: wrong amount of adjectives");
-			tempScan.close();
-			return;
-		}
-		if (numAdverb == 1) {
-			aAdverb = tempScan.next();
-		}
-		else if (numAdverb == 0) {
-			// do nothing
-		}
-		else if (numAdverb == 2) {
-			aAdverb = tempScan.next();
-			bAdverb = tempScan.next();
-		}
-		else {
-			System.out.println("Error: wrong amount of adverbs");
-			tempScan.close();
-			return;
-		}
+		
+		
 		
 		
 		SentenceCreater c = new SentenceCreater(aVerb, bVerb, aNoun, bNoun, aAdjective, bAdjective, aAdverb, bAdverb, numVerb, numNoun, numAdjective, numAdverb);
 		c.sentenceOutput();
 		tempScan.close();
+		tempScan2.close();
 	}
-}
+} // for website implementation use https://www.youtube.com/watch?v=4-6gHsg2xpU
