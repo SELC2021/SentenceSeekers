@@ -12,14 +12,14 @@ async function bFunction(parameter1) {
 }
 async function cFunction(parameter2) {
     var i;
-    var aVerb = "156l7nmflaoi2n6lFsasenytlfdnasd";
-    var bVerb = "156l7nmflaoi2n6lFsasenytlfdnasd";
-    var aNoun = "156l7nmflaoi2n6lFsasenytlfdnasd";
-    var bNoun = "156l7nmflaoi2n6lFsasenytlfdnasd";
-    var aAdjective = "156l7nmflaoi2n6lFsasenytlfdnasd";
-    var bAdjective = "156l7nmflaoi2n6lFsasenytlfdnasd";
-    var aAdverb = "156l7nmflaoi2n6lFsasenytlfdnasd";
-    var bAdverb = "156l7nmflaoi2n6lFsasenytlfdnasd";
+    var aVerb = "Not Assigned";
+    var bVerb = "Not Assigned";
+    var aNoun = "Not Assigned";
+    var bNoun = "Not Assigned";
+    var aAdjective = "Not Assigned";
+    var bAdjective = "Not Assigned";
+    var aAdverb = "Not Assigned";
+    var bAdverb = "Not Assigned";
     var numVerb = 0;
     var numNoun = 0;
     var numAdjective = 0;
@@ -28,58 +28,58 @@ async function cFunction(parameter2) {
     for (i = 0; i < parameter2.length; ++i) {
         let tempstring = await bFunction(parameter2[i]);
         console.log((i + 1) + " word grabbed");
-        if (parameter2[i].slice(-2) == "ly" && numAdverb < 2 && !(tempstring.includes("(adjective)"))) {
+        if (parameter2[i].slice(-2) == "ly" && numAdverb < 2 && !(tempstring.includes("adjective"))) {
             if (numAdverb == 0) {
-                aAdverb = parameter2[i].substring(66);
+                aAdverb = parameter2[i].substring(67);
             }
             else if (numAdverb == 1) {
-                bAdverb = parameter2[i].substring(66);
+                bAdverb = parameter2[i].substring(67);
             }
             ++numAdverb;
         } // if -ly is at the end of the word and isn't an adjective, it will assign it as an adverb, as the website doesn't have all adverbs.
-        else if (tempstring.includes("(verb)") && numVerb < 2) {
+        else if (tempstring.includes(">verb<") && numVerb < 2) {
             if (numVerb == 0) {
-                aVerb = parameter2[i].substring(66);
+                aVerb = parameter2[i].substring(67);
 
             }
             else if (numVerb == 1) {
-                bVerb = parameter2[i].substring(66);
+                bVerb = parameter2[i].substring(67);
             }
             ++numVerb;
         } // prioritizes setting verbs
-        else if (tempstring.includes("(noun)") && numNoun < 2) {
+        else if (tempstring.includes("noun<") && numNoun < 2) {
             if (numNoun == 0) {
-                aNoun = parameter2[i].substring(66);
+                aNoun = parameter2[i].substring(67);
             }
             else if (numNoun == 1) {
-                bNoun = parameter2[i].substring(66);
+                bNoun = parameter2[i].substring(67);
             }
             ++numNoun;
         } // sets nouns
-        else if (tempstring.includes("(adverb)") && numAdverb < 2) {
+        else if (tempstring.includes(">adverb<") && numAdverb < 2) {
             if (numAdverb == 0) {
-                aAdverb = parameter2[i].substring(66);
+                aAdverb = parameter2[i].substring(67);
             }
             else if (numAdverb == 1) {
-                bAdverb = parameter2[i].substring(66);
+                bAdverb = parameter2[i].substring(67);
             }
             ++numAdverb;
         } // sets adverbs
-        else if (tempstring.includes("(adjective)") && numAdjective < 2) {
+        else if (tempstring.includes("adjective") && numAdjective < 2) {
             if (numAdjective == 0) {
-                aAdjective = parameter2[i].substring(66);
+                aAdjective = parameter2[i].substring(67);
             }
             else if (numAdjective == 1) {
-                bAdjective = parameter2[i].substring(66);
+                bAdjective = parameter2[i].substring(67);
             }
             ++numAdjective;
         } // sets adjectives
         else if (numNoun < 2) {
             if (numNoun == 0) {
-                aNoun = parameter2[i].substring(66);
+                aNoun = parameter2[i].substring(67);
             }
             else if (numNoun == 1) {
-                bNoun = parameter2[i].substring(66);
+                bNoun = parameter2[i].substring(67);
             }
             ++numNoun;
         } //assumes all non registered words are a noun
@@ -105,7 +105,7 @@ async function cFunction(parameter2) {
                 g = "The " + aAdjective + " " + bAdjective + " " + aNoun + " " + aVerb + ".";
             }
             else if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 1) {
-                g = "The " + aNoun + " " + " " + aAdverb + " " + aVerb + ".";
+                g = "The " + aNoun + " " + " " + aVerb + " " + aAdverb + ".";
             }
             else if (numVerb == 1 && numNoun == 1 && numAdjective == 0 && numAdverb == 2) {
                 g = "The " + aNoun + " " + " " + aAdverb + " " + bAdverb + " " + aVerb + ".";
@@ -238,7 +238,14 @@ async function cFunction(parameter2) {
             }
 
             document.getElementById("demo").innerHTML = g;
-
+            console.log("aVerb = " + aVerb);
+            console.log("bVerb = " + bVerb);
+            console.log("aNoun = " + aNoun);
+            console.log("bNoun = " + bNoun);
+            console.log("aAdverb = " + aAdverb);
+            console.log("bAdverb = " + bAdverb);
+            console.log("aAdjective = " + aAdjective);
+            console.log("bAdjective = " + bAdjective);
         }
 
     }
@@ -333,7 +340,7 @@ function aFunction() {
     var i;
     
     for (i = 0; i < words.length; ++i) {
-        words[i] = "https://www.collinsdictionary.com/us/dictionary/english-thesaurus/" + words[i];
+        words[i] = "https://www.collinsdictionary.com/us/dictionary/american-thesaurus/" + words[i];
         //websitename = "https://www.collinsdictionary.com/us/dictionary/english-thesaurus/" + tempString3;
         //cFunction(websitename);
 
