@@ -1,4 +1,4 @@
-async function bFunction(parameter1) {
+async function bFunction(parameter1) { // requires separate function due to asynchronous operation
     console.log("grabbing a word");
     try {
         let response = await fetch(parameter1)
@@ -10,7 +10,7 @@ async function bFunction(parameter1) {
         
     }
 }
-async function cFunction(parameter2) {
+async function cFunction(parameter2) { 
     var i;
     var aVerb = "Not Assigned";
     var bVerb = "Not Assigned";
@@ -37,6 +37,9 @@ async function cFunction(parameter2) {
             }
             ++numAdverb;
         } // if -ly is at the end of the word and isn't an adjective, it will assign it as an adverb, as the website doesn't have all adverbs.
+        else if (parameter2[i].substring(67) == "a") {
+            //do nothing
+        }
         else if (tempstring.includes(">verb<") && numVerb < 2) {
             if (numVerb == 0) {
                 aVerb = parameter2[i].substring(67);

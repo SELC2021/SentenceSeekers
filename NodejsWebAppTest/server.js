@@ -17,5 +17,4 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/HTMLPage1.html'));
 });
 app.listen(1337);
-
 //# sourceMappingURL=server.js.map
